@@ -199,7 +199,7 @@ while (true) {
             }
         }
         //  Or handle reply from peer broker
-        else if ($socket === $cloudbe) {
+        elseif ($socket === $cloudbe) {
             //  We don't use peer broker address for anything
             $zmsg->recv()->unwrap();
         }
@@ -214,9 +214,7 @@ while (true) {
             $zmsg->recv();
             echo $zmsg->body(), PHP_EOL;
             $zmsg = null;
-        }
-
-        if ($zmsg) {
+        }        if ($zmsg) {
             //  Route reply to cloud if it's addressed to a broker
             for ($argn = 2; $argn < $_SERVER['argc']; $argn++) {
                 if ($zmsg->address() == $_SERVER['argv'][$argn]) {

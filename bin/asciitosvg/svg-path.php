@@ -251,7 +251,7 @@ function A2S_SVGPathTrace(/* stream */ $TraceFILE, /* string */ $zTracePrompt){
   $this->yyTraceFILE = $TraceFILE;
   $this->yyTracePrompt = $zTracePrompt;
   if( $this->yyTraceFILE===null ) $this->yyTracePrompt = null;
-  else if( $this->yyTracePrompt===null ) $this->yyTraceFILE = null;
+  elseif( $this->yyTracePrompt===null ) $this->yyTraceFILE = null;
 }
 
 /* For tracing shifts, the names of all terminals and nonterminals
@@ -706,7 +706,7 @@ private function yy_reduce(
   $yyact = $this->yy_find_reduce_action($state_for_reduce,$yygoto);
   if( $yyact < self::YYNSTATE ){
     $this->yy_shift($yyact, $yygoto, $yygotominor);
-  }else if( $yyact == self::YYNSTATE + self::YYNRULE + 1 ){
+  }elseif( $yyact == self::YYNSTATE + self::YYNRULE + 1 ){
     $this->yy_accept();
   }
 }
@@ -803,7 +803,7 @@ function A2S_SVGPath(
       }else{
         $yymajor = self::YYNOCODE;
       }
-    }else if( $yyact < self::YYNSTATE + self::YYNRULE ){
+    }elseif( $yyact < self::YYNSTATE + self::YYNRULE ){
       $this->yy_reduce($yyact-self::YYNSTATE);
     }else if( $yyact == $this->YY_ERROR_ACTION ){
       if( $this->yyTraceFILE ){
@@ -883,8 +883,7 @@ if (self::YYERRORSYMBOL) {
     }else{
       $this->yy_accept();
       $yymajor = self::YYNOCODE;
-    }
-  }while( $yymajor!=self::YYNOCODE && $this->yyidx>=0 );
+    } }while( $yymajor!=self::YYNOCODE && $this->yyidx>=0 );
 }
 
 }

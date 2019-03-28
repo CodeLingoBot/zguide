@@ -148,7 +148,7 @@ while (true) {
                 }
             }
             //  Or handle reply from peer broker
-            else if ($socket === $cloudbe) {
+            elseif ($socket === $cloudbe) {
                 //  We don't use peer broker address for anything
                 $zmsg->recv()->unwrap();
             }

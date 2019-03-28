@@ -270,7 +270,7 @@ class mdbroker
         if ($command == MDPW_READY) {
             if ($worker_ready) {
                 $this->worker_delete($worker, true); //  Not first command in session
-            } else if(strlen($sender) >= 4      // Reserved service name
+            } elseif(strlen($sender) >= 4      // Reserved service name
                     && substr($sender, 0, 4) == 'mmi.') {
                 $this->worker_delete($worker, true);
             } else {

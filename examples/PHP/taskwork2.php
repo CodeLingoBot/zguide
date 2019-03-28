@@ -43,7 +43,7 @@ while (true) {
                 $sender->send("");
             }
             //  Any waiting controller command acts as 'KILL'
-            else if ($socket === $controller) {
+            elseif ($socket === $controller) {
                 exit();
             }
         }
